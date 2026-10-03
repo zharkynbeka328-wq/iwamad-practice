@@ -109,3 +109,7 @@ footer {
     justify-content: center;
   }
 }
+.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+}

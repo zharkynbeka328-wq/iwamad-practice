@@ -1,5 +1,5 @@
-import { useState } from 'react'
 import photo from '../photo.jpg'
+import LikeButton from './LikeButton'
 
 type Link = {
   label: string
@@ -29,7 +29,6 @@ function ProfileCard({
   description,
   links,
 }: ProfileCardProps) {
-  const [liked, setLiked] = useState(false)
 
   return (
     <section className="card">
@@ -59,13 +58,7 @@ function ProfileCard({
         )}
       </div>
 
-      <button
-        id="likeButton"
-        type="button"
-        onClick={() => setLiked(!liked)}
-      >
-        {liked ? '♥ Liked' : '♡ Like'}
-      </button>
+   <LikeButton />
     </section>
   )
 }
