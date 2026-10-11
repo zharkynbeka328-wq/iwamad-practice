@@ -1,27 +1,25 @@
-import photo from '../photo.jpg'
-import LikeButton from './LikeButton'
+
+import photo from "../photo.jpg";
+import LikeButton from "./LikeButton";
+import Card from "./ui/Card";
 
 type Link = {
-  label: string
-  url: string
-}
+  label: string;
+  url: string;
+};
 
 type ProfileCardProps = {
-  name: string
-  description: string
-  links: Link[]
-}
+  name: string;
+  description: string;
+  links: Link[];
+};
 
 function LinkItem({ label, url }: Link) {
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a href={url} target="_blank" rel="noreferrer">
       {label}
     </a>
-  )
+  );
 }
 
 function ProfileCard({
@@ -29,14 +27,10 @@ function ProfileCard({
   description,
   links,
 }: ProfileCardProps) {
-
   return (
-    <section className="card">
+    <Card className="card">
       <div className="profile-content">
-        <img
-          src={photo}
-          alt={`Photo of ${name}`}
-        />
+        <img src={photo} alt={`Photo of ${name}`} />
 
         <div>
           <h2>{name}</h2>
@@ -58,9 +52,9 @@ function ProfileCard({
         )}
       </div>
 
-   <LikeButton />
-    </section>
-  )
+      <LikeButton />
+    </Card>
+  );
 }
 
-export default ProfileCard
+export default ProfileCard;

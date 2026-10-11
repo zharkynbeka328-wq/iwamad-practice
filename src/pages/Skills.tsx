@@ -1,16 +1,24 @@
+import Tag from "../components/ui/Tag";
+
 function Skills() {
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "TypeScript",
+    "Git & GitHub",
+  ];
+
   return (
     <main>
       <h1>My Skills</h1>
 
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>TypeScript</li>
-        <li>Git & GitHub</li>
-      </ul>
+      <div className="skills-list">
+        {skills.map((skill) => (
+          <Tag key={skill}>{skill}</Tag>
+        ))}
+      </div>
     </main>
   );
 }

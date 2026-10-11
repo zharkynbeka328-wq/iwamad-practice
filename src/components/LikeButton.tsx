@@ -1,12 +1,13 @@
 import { useLikes } from "../context/LikesContext";
+import Button from "./ui/Button";
 
 function LikeButton() {
   const { likes, addLike } = useLikes();
 
   return (
-    <button id="likeButton" type="button" onClick={addLike}>
+    <Button id="likeButton" type="button" onClick={addLike}>
       ♡ Like ({likes})
-    </button>
+    </Button>
   );
 }
 
