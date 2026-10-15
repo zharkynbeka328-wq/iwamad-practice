@@ -2,14 +2,23 @@
 .ui-button {
   font: inherit;
   border: 1px solid var(--color-primary);
-  border-radius: 8px;
-  padding: var(--spacing-small) var(--spacing-medium);
+  border-radius: 9px;
+  padding: 11px 18px;
   cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.ui-button:hover {
+  transform: translateY(-1px);
 }
 
 .ui-button--primary {
   background: var(--color-primary);
   color: var(--color-surface);
+}
+
+.ui-button--primary:hover {
+  background: #1d43bd;
 }
 
 .ui-button--secondary {
@@ -28,7 +37,7 @@
   gap: var(--spacing-medium);
   padding: var(--spacing-large);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 12px;
   background: var(--color-surface);
 }
 
@@ -37,7 +46,7 @@
   align-items: center;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  padding: 4px 8px;
+  padding: 4px 10px;
   background: var(--color-surface);
   color: var(--color-text);
   font: inherit;
@@ -48,4 +57,106 @@
   flex-wrap: wrap;
   gap: var(--spacing-small);
   margin-top: var(--spacing-medium);
+}
+
+.form {
+  display: grid;
+  gap: 18px;
+  width: calc(100% - 32px);
+  max-width: 440px;
+  box-sizing: border-box;
+  margin: 24px auto 40px;
+  padding: 28px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(30, 45, 80, 0.08);
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.field label {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.field input:not([type="checkbox"]) {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 15px;
+  color: #252b38;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field input:not([type="checkbox"]):focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(36, 80, 216, 0.12);
+}
+
+.field input[aria-invalid="true"] {
+  border: 2px solid var(--color-error);
+}
+
+.field-error {
+  margin: 0;
+  color: var(--color-error);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 40px;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
+.check input {
+  accent-color: var(--color-primary);
+}
+
+.form .ui-button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.register-title {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 28px;
+}
+
+@media (max-width: 480px) {
+  .form {
+    padding: 20px;
+  }
+
+  .register-title {
+    font-size: 24px;
+  }
+}
+
+.register-subtitle {
+  margin: 0 16px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 14px;
 }
